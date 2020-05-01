@@ -10,10 +10,13 @@
     "clean": "rimraf dist",
     "build": "npm run clean && npm run copy:assets && npm run copy:book",
     "copy:assets": "mkdir -p dist/mermaid && cp ./node_modules/mermaid/dist/{mermaid.min.js,mermaid*.css} dist/mermaid",
-    "copy:book": "mkdir -p dist/book && cp -R book/ dist/book"
+    "copy:book": "mkdir -p dist/book && cp -R book/ dist/book",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "mermaid": "^7.0.0"
+    "mermaid": "^7.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "rimraf": "^2.5.2"
@@ -24,5 +27,6 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/chriswessels/gitbook-plugin-mermaid-gb3#readme"
+  "homepage": "https://github.com/chriswessels/gitbook-plugin-mermaid-gb3#readme",
+  "snyk": true
 }
